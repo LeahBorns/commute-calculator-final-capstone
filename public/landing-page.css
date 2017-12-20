@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #2c3531;
+}
+
+body {
+    font-family: 'Cousine', monospace;
+    font-size: 1em;
+    color: black;
+    text-align: center;
+    line-height: 1.5;
+}
+
+nav, footer {
+    padding: 4% 0;
+    background-color: black;
+    color: white;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+header {
+    padding: 5% 0;
+}
+
+header.main-header {
+    padding: 15% 0;
+}
+
+section.purpose-statement {
+    min-height: 200px;
+    padding: 30px 0;
+    background-color: lightgray;
+}
+
+section.sign-up {
+    min-height: 200px;
+    padding: 30px 0;
+    background-color: darkgray;
+}
+
+p {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+p + p {
+    margin-top: 15px
+}
