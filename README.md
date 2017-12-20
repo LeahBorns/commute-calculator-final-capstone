@@ -33,8 +33,8 @@ Initial wireframes for Co2mmute calculator can be seen below. Wireframes of all 
 * As a user I should be able to see the date, my milage, and lbs co2 diverted in chronological order in a table below the input area.
 
 ##### Screen Inventory
-* Landing page/login page
-* account signup page
+* Landing page/account signup page
+* login page
 * Nav bar with logo and login/out
 * User home page with milage totals, co2 diverted, input area and table of overall submissions
 

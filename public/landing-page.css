@@ -3,13 +3,12 @@
     border: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #2c3531;
 }
 
 body {
     font-family: 'Cousine', monospace;
     font-size: 1em;
-    color: black;
+    color: #2c3531;
     text-align: center;
     line-height: 1.5;
 }
