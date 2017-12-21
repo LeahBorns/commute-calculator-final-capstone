@@ -32,7 +32,7 @@ section.miles-total div {
     margin: auto;
     width: 30%;
     display: inline-block;
-    background-color: white;
+    background-color: lightgray;
 }
 
 section {
@@ -76,6 +76,7 @@ section:nth-child(3) {
 }
 
 table {
+    background-color: white;
     margin: auto;
     width: 60%;
 
@@ -83,9 +84,11 @@ table {
 
 table th {
     font-size: 1.2em;
+    background-color: darkgray;
 }
 
 table tr {
+
     height: 30px;
     border: none;
 }
