@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>Co2mmute Calculator landing page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="user-input-page.css">
+    </head>
+
+    <body>
+        <nav role="navigation">
+            <p>Nav</p>
+            <a href="/sign-in">Sign-out</a>
+        </nav>
+        <main role="main">
+            <section class="miles-total">
+                <header>
+                    <h2>Miles Total</h2>
+                </header>
+                <div><h4>Prius</h4> <br> 50lbs</div>
+                <div><h4>Average Sedan</h4> <br> 100lbs</div>
+                <div><h4>Average SUV</h4> <br> 200lbs</div>
+            </section>
+            <section class="miles-input">
+                <header><h3>How many miles did you ride today?</h3></header>
+                <form class="miles-form">
+                    <div>
+                        <label for="miles">Date</label>
+                        <input type="date" name="date" id="date"/>
+                    </div>
+                    <div>
+                        <label for="miles">Miles</label>
+                        <input type="text" placeholder="Miles" name="miles" id="miles"/>
+                    </div>
+                    <button type="submit">Convert</button>
+                </form>
+            </section>
+            <section>
+               <header>
+                   <h3>Miles to date</h3>
+               </header>
+                <table>
+                   <tr>
+                        <th>Date</th>
+                        <th>Miles</th>
+                        <th>CO<sub>2</sub> Diverted</th>
+                    </tr>
+                    <tr>
+                        <td>12/21/2017</td>
+                        <td>10 miles</td>
+                        <td>40 lbs</td>
+                    </tr>
+                    <tr>
+                        <td>12/22/2017</td>
+                        <td>5 miles</td>
+                        <td>20 lbs</td>
+                    </tr>
+                    <tr>
+                        <td>12/23/2017</td>
+                        <td>30 miles</td>
+                        <td>160 lbs</td>
+                    </tr>
+                    <tr>
+                        <td>12/24/2017</td>
+                        <td>16 miles</td>
+                        <td>80 lbs</td>
+                    </tr>
+                    <tr>
+                        <td>12/25/2017</td>
+                        <td>3 miles</td>
+                        <td>5 lbs</td>
+                    </tr>
+                    <tr>
+                        <td>12/26/2017</td>
+                        <td>5 miles</td>
+                        <td>20 lbs</td>
+                    </tr>
+                    <tr>
+                        <td>12/27/2017</td>
+                        <td>7 miles</td>
+                        <td>30 lbs</td>
+                    </tr>
+                   <br>
+                    <tr>
+                        <th>Total</th>
+                        <td></td>
+                        <td>355 lbs</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <footer role="contentinfo">
+            footer
+        </footer>
+    </body>
+</html>
