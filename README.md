@@ -40,14 +40,10 @@ Initial wireframes for Co2mmute calculator can be seen below. Wireframes of all 
 
 ##### Wireframes
 
-* Wireframe to log in
-![Log-In](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-wireframe/sustain-node-capstone-wireframe-login.jpg)
-* Wireframe with user profile (Home) information to find friends/activities (img, summary, feed of activities, activities signed up for
-![Profile](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-wireframe/sustain-node-capstone-wireframe_profile.jpg)
-* Wireframe with list of activities
-![Activities](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-wireframe/sustain-node-capstone-wireframe_activities.jpg)
-* Wireframe with live feed
-
+* Wireframe to understand purpose and sign-up
+![Purpose and Sign-up](https://github.com/LeahBorns/commute-calculator-final-capstone/blob/master/wire-frame-images/landing-signup-html-wireframe.png)
+* Wireframe with user profile to see co2 diverted to date and to input more milage to be converted
+![User Profile](https://github.com/LeahBorns/commute-calculator-final-capstone/blob/master/wire-frame-images/user-data-html-wireframe.png)
 
 ## Working Prototype
 
