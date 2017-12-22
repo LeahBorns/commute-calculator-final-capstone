@@ -22,15 +22,15 @@ Initial wireframes for Co2mmute calculator can be seen below. Wireframes of all 
 ## User-stories
 
 ##### Sign-in/Signup
-* As a user I should be able to sign up for Co2mmute calculator
-* As a user I should be able to log in to Co2mmute calculator
-* As a user I should be able to understand the purpose of the app based off the landing page
+* As a user I should be able to sign up for Co2mmute calculator to access my own account and data
+* As a user I should be able to log in to Co2mmute calculator to access my own account and data
+* As a user I should be able to understand the purpose of the app based off the landing page to know what the app does.
 
 ##### MVP
-* As a user I should be able input and submit the date and daily milage.
-* As a user I should be able to see my total milage to date
-* As a user I should be able to see my milage converted into lbs of co2 for a prius, average sedan and an SUV.
-* As a user I should be able to see the date, my milage, and lbs co2 diverted in chronological order in a table below the input area.
+* As a user I should be able to input and submit the date and daily milage to see the amount of co2 diverted to date.
+* As a user I should be able to see my total milage to date to stay updated on my progress
+* As a user I should be able to see my milage converted into lbs of co2 for a prius, average sedan and an SUV to get a better understanding of my impact on biking vs driving.
+* As a user I should be able to see the date, my milage, and lbs co2 diverted in chronological order in a table below the input area to access each submission individually.
 
 ##### Screen Inventory
 * Landing page/account signup page
