@@ -42,6 +42,8 @@ Initial wireframes for Co2mmute calculator can be seen below. Wireframes of all 
 
 * Wireframe to understand purpose and sign-up
 ![Purpose and Sign-up](https://github.com/LeahBorns/commute-calculator-final-capstone/blob/master/wire-frame-images/landing-signup-html-wireframe.png)
+* Wireframe to sign-in
+![Sign-in](https://github.com/LeahBorns/commute-calculator-final-capstone/blob/master/wire-frame-images/sign-in-page-html-wireframe.png)
 * Wireframe with user profile to see co2 diverted to date and to input more milage to be converted
 ![User Profile](https://github.com/LeahBorns/commute-calculator-final-capstone/blob/master/wire-frame-images/user-data-html-wireframe.png)
 
