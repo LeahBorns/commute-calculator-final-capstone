@@ -14,7 +14,7 @@ body {
 }
 
 nav, footer {
-    padding: 4% 0;
+    padding: 3% 0;
     background-color: black;
     color: white;
 }
@@ -27,9 +27,32 @@ nav {
     z-index: 10;
 }
 
+
 header {
     padding: 5% 0;
 }
+
+/*///////////Sign-in section/////////////*/
+
+section#sign-in-section{
+    min-height: 200px;
+    padding: 30px 0;
+    background-color: lightgray;
+}
+
+header#sign-in-header {
+    padding-top: 10%;
+    padding-bottom: 2%;
+}
+
+form.signin-form {
+    margin: auto;
+    width: 40%;
+}
+
+
+
+/*///////////Main and purpose section/////////////*/
 
 header.main-header {
     padding: 15% 0;
@@ -41,12 +64,6 @@ section.purpose-statement {
     background-color: lightgray;
 }
 
-section.sign-up {
-    min-height: 200px;
-    padding: 30px 0;
-    background-color: darkgray;
-}
-
 p {
     margin: 0 auto;
     max-width: 650px;
@@ -55,3 +72,13 @@ p {
 p + p {
     margin-top: 15px
 }
+
+/*///////////Sign-up section/////////////*/
+
+section#sign-up {
+    min-height: 200px;
+    padding: 30px 0;
+    background-color: darkgray;
+}
+
+
