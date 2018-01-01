@@ -13,10 +13,10 @@
     <body>
         <nav role="navigation">
         <p>Nav</p>
-            <a href="/sign-in">Sign-in</a>
-            <a href="/sign-in">Sign-out</a>
+            <a href="/sign-in" id="js-signin-link">Sign-in</a>
+            <a href="/sign-in" id="js-signout-link">Sign-out</a>
         </nav>
-        <main role="main">
+        <main id="sign-in-page" role="main">
            <section id="sign-in-section">
                <header id="sign-in-header"><h5>Sign-in to Co<sub>2</sub>mmute Calculator</h5></header>
                <form id="signin-form">
@@ -61,8 +61,11 @@
                   <button type="submit">Sign up</button>
               </form>
             </section>
+        </main>
 
 <!--            Mileage page-->
+
+            <main id="profile-page" role="main">
             <section id="miles-total">
                 <header>
                     <h2>Miles Total</h2>
@@ -143,5 +146,7 @@
         <footer role="contentinfo">
             footer
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="client.js" type="text/javascript"></script>
     </body>
 </html>
