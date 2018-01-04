@@ -137,9 +137,9 @@ button#js-signin-button:hover {
 /*///////////Main and purpose section/////////////*/
 
 section#main-header {
-    padding: 5% 0;
-    background-image: url("/commute-calculator-final-capstone/images/co2mmuteSectionImg.jpg");
-    background-position: center;
+    padding: 5% 0 0 0;
+    background-image: url("/images/co2mmuteSectionImg.jpg");
+    background-position: center bottom 100px;
     background-repeat: no-repeat;
     background-color: #0375B4;
    background-attachment: fixed;
