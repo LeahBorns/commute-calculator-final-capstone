@@ -50,8 +50,12 @@
                 <header>
                     <h3>What is Co<sub>2</sub>mmute Calculator?</h3>
                 </header>
+                   <div id="site-description">
                     <p>Co2mmute calculator is a simple way for bike commuters to keep track of their milage and the positive impact they are having each time they decide to pedal vs drive.</p>
-                    <p>[<em>infographic with stats of biking vs driving</em>]</p>
+                </div>
+                   <div id="site-infographic">
+                    <img id="infographic" src="/commute-calculator-final-capstone/images/co2mmuteInfographic.jpg" alt="cars infographic">
+                </div>
 
             </section>
             <section id="sign-up">
@@ -69,7 +73,7 @@
                       <label for="confirm-password">Re-enter Password</label>
                       <input type="text" placeholder="Re-enter password" name="confirm-password" id="confirm-password"/>
                   </div>
-                  <button type="submit">Sign up</button>
+                  <button id="js-signup-button" type="submit">Sign up</button>
               </form>
             </section>
         </main>
@@ -82,12 +86,12 @@
                     <h2><span id="profileUsername">Username </span>Miles Total</h2>
                     <p id="miles-number">500 miles</p>
                 </header>
-                <div><h4>Green <img src="/commute-calculator-final-capstone/images/co2mmute-green.png" alt="green car"></h4> <br> 50 lbs/co2</div>
-                <div><h4>Average Sedan <img src="/commute-calculator-final-capstone/images/co2mmute-average.png" alt="average car"></h4> <br> 100 lbs/co2</div>
-                <div><h4>Average SUV <img src="/commute-calculator-final-capstone/images/co2mmute-suv.png" alt="average suv"></h4> <br> 200 lbs/co2</div>
+                <div id="green-car"><h3>Green <img src="/commute-calculator-final-capstone/images/co2mmute-green.png" alt="green car"></h3> <br> <p>50 lbs/co2</p></div>
+                <div id="sedan-car"><h3>Average Sedan <img src="/commute-calculator-final-capstone/images/co2mmute-average.png" alt="average car"></h3> <br> <p>100 lbs/co2</p></div>
+                <div id="suv-car"><h3>Average SUV <img src="/commute-calculator-final-capstone/images/co2mmute-suv.png" alt="average suv"></h3> <br> <p>200 lbs/co2</p></div>
             </section>
             <section id="miles-input">
-                <header><h3>How many miles did you ride today?</h3></header>
+                <header><h2>How many miles did you ride today?</h2></header>
                 <form id="miles-form">
                     <div>
                         <label for="miles">Date</label>
@@ -97,12 +101,12 @@
                         <label for="miles">Miles</label>
                         <input type="text" placeholder="Miles" name="miles" id="miles"/>
                     </div>
-                    <button type="submit">Convert</button>
+                    <button id="convert-button" type="submit">Convert</button>
                 </form>
             </section>
             <section>
                 <header>
-                    <h3>Miles to date</h3>
+                    <h2>Miles to date</h2>
                 </header>
                 <table>
                     <tr>
