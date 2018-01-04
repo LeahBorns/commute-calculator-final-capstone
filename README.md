@@ -49,7 +49,7 @@ Initial wireframes for Co2mmute calculator can be seen below. Wireframes of all 
 
 ## Working Prototype
 
-You can access a working prototype of the app here: https://sustain-node-capstone.herokuapp.com/
+You can access a node working prototype of the app here: https://commute-calculator-capstone.herokuapp.com/ and a react working prototype here: ???
 
 ## Functionality
 The app's functionality includes:

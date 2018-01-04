@@ -1,0 +1,45 @@
+{
+    "name": "commute-calculator-final-capstone",
+    "version": "1.0.0",
+    "description": "Final capstone that will allow bike commuters to calculate the lbs co2 diverted.",
+    "main": "server.js",
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "test": "mocha",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LeahBorns/commute-calculator-final-capstone.git"
+    },
+    "author": "Leah Borns",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LeahBorns/commute-calculator-final-capstone/issues"
+    },
+    "dependencies": {
+        "bcrypt": "^0.8.7",
+        "bcryptjs": "^2.3.0",
+        "body-parser": "^1.15.2",
+        "cors": "^2.8.4",
+        "express": "^4.14.0",
+        "jsonwebtoken": "^8.1.0",
+        "moment": "^2.18.1",
+        "mongodb": "^2.2.9",
+        "mongoose": "^4.5.10",
+        "morgan": "^1.9.0",
+        "passport": "^0.3.2",
+        "passport-http": "^0.3.0",
+        "passport-jwt": "^3.0.0",
+        "passport-jwt-strategy": "^1.1.4",
+        "unirest": "^0.5.1"
+    },
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "chai-http": "^3.0.0",
+        "mocha": "^2.5.3"
+    },
+    "homepage": "https://github.com/LeahBorns/commute-calculator-final-capstone#readme"
+}
