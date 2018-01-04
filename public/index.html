@@ -6,19 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
     <body>
         <nav role="navigation">
-        <p>Nav</p>
-            <a href="/sign-in" id="js-signin-link">Sign-in</a>
-            <a href="/sign-in" id="js-signout-link">Sign-out</a>
+        <ul>
+            <a href="#" id="main-logo">Co<sub>2</sub>mmute Calculator</a>
+            <a href="#purpose-statement">About</a>
+            <a href="#sign-up">Sign Up</a>
+        </ul>
+        <div id="sign-in-buttons">
+            <button id="js-signin-link">Sign-in</button>
+            <button id="js-signout-link">Sign-out</button>
+        </div>
         </nav>
         <main id="sign-in-page" role="main">
            <section id="sign-in-section">
-               <header id="sign-in-header"><h5>Sign-in to Co<sub>2</sub>mmute Calculator</h5></header>
+               <header id="sign-in-header"><h3>Sign-in to Co<sub>2</sub>mmute Calculator</h3></header>
                <form id="signin-form">
                    <div>
                        <label for="username"> Username</label>
@@ -28,13 +34,18 @@
                        <label for="password">Password</label>
                        <input type="text" placeholder="Password" name="password" id="password"/>
                    </div>
-                   <button type="submit">Sign in</button>
+                   <button id="js-signin-button" type="submit">Sign in</button>
                </form>
                <p>Not registered yet? <a href="#sign-up">Click here</a></p>
            </section>
-            <header id="main-header" role="banner">
-                <h1>Co<sub>2</sub>mmute Calculator</h1>
+
+            <section id="main-header" >
+            <header id="page-title"  role="banner">
+                <p>Co<sub>2</sub>mmute Calculator</p>
             </header>
+            </section>
+
+
             <section id="purpose-statement">
                 <header>
                     <h3>What is Co<sub>2</sub>mmute Calculator?</h3>
@@ -48,11 +59,11 @@
               <form id="signup-form">
                   <div>
                       <label for="username"> Username</label>
-                      <input type="text" placeholder="Username" name="username" id="username"/>
+                      <input type="text" placeholder="Username" name="username" id="signup-username"/>
                   </div>
                   <div>
                       <label for="password">Password</label>
-                      <input type="text" placeholder="Password" name="password" id="password"/>
+                      <input type="text" placeholder="Password" name="password" id="signup-password"/>
                   </div>
                   <div>
                       <label for="confirm-password">Re-enter Password</label>
@@ -68,7 +79,7 @@
             <main id="profile-page" role="main">
             <section id="miles-total">
                 <header>
-                    <h2>Miles Total</h2>
+                    <h2><span id="profileUsername">Username </span>Miles Total</h2>
                     <p id="miles-number">500 miles</p>
                 </header>
                 <div><h4>Green <img src="/commute-calculator-final-capstone/images/co2mmute-green.png" alt="green car"></h4> <br> 50 lbs/co2</div>

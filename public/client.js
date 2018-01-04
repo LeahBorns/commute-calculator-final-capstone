@@ -26,19 +26,16 @@ function showProfilePage(loggedinUserName) {
     $('#js-signout-link').show();
     $('#js-signout-link').text("Sign out " + loggedinUserName);
     $('#js-signin-link').hide();
-    $('.profileUsername').text(loggedinUserName);
-    $('.profileDescription').text(sustainGoals);
-    $('#total-points').text(currentScore + myActivities.activityPoints);
+    $('#profileUsername').text(loggedinUserName);
+    $('#miles-number').text(currentScore + myActivities.activityPoints);
     displayProfileActivities(myActivities);
-    //        $('.profileActivityBoxesSection').text(displayProfileActivities(myActivities));
 }
 
-///////////////////////////////////////////SIGN-IN TRIGGERS///////////////////////////////////////////////
+/////////////////SIGN-IN TRIGGERS/////////////////////////////////////////
 //Page loads to SIGN-IN PAGE
 //1. User enters user name and password. Press enter to enter site
 $(document).ready(function () {
-    // when page first loads
-    //    $('*').scrollTop(0);
+
 
     $('.sustain-logo').on('click', function (event) {
         showSignInPage();
@@ -46,16 +43,11 @@ $(document).ready(function () {
 
 
 
-    $('#friends-page').hide();
-    $('.addedCategoryCard').hide();
-    $('#feed-page').hide();
-    $('#activities-page').hide();
     $('#profile-page').hide();
-    $('#register-page').hide();
-    $('#login-page').show();
+    $('#signin-form').hide();
+    $('#sign-in-page').show();
     $('#js-signout-link').hide();
-    $('#nav-links').hide();
-    $("#messageBox").hide();
+    $('#js-signin-link').show();
 
     // USER WITH ACCOUNT SIGNS IN
 
@@ -63,8 +55,8 @@ $(document).ready(function () {
         event.preventDefault();
 
         // AJAX call to validate login info and sign user in
-        const inputUname = $('input[name="signin-username"]').val();
-        const inputPw = $('input[name="signin-pw"]').val();
+        const inputUname = $('input[name="username"]').val();
+        const inputPw = $('input[name="password"]').val();
         // check for spaces, empty, undefined
         if ((!inputUname) || (inputUname.length < 1) || (inputUname.indexOf(' ') > 0)) {
 
@@ -110,6 +102,7 @@ $(document).ready(function () {
             });
         };
     });
+};
     //
     ///////////////////////////////////////////REGISTER PAGE TRIGGERS///////////////////////////////////////////////
     //2. Visitor wants to create an account. Clicks create an account
