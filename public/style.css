@@ -74,10 +74,6 @@ a#main-logo {
     font-size: 1.5em;
 }
 
-
-
-
-
 /*///////////Sign-in section/////////////*/
 
 h1, h2, h3, h4 {
@@ -109,6 +105,12 @@ header#sign-in-header {
 form#signin-form {
     margin: auto;
     width: 40%;
+}
+
+label#signin-label, #password-label {
+    font-size: 1.2rem;
+    width: 22%;
+    margin: auto;
 }
 
 input#username, #password {
@@ -201,24 +203,26 @@ img#infographic {
     margin: auto;
 }
 
+
 div#how-it-works{
-    margin-top: 100px;
-    width: 30%;
+    width: 25%;
     display: inline-block;
     font-size: 1.5em;
     text-align: left;
+    margin: 100px auto;
 }
 
 div#submit-screen {
     display:inline-block;
     width: 60%;
+    vertical-align: top;
+    margin-top: 100px;
 }
 
 div#submit-screen img {
-    width: 80%;
-    vertical-align: middle;
+    width: 90%;
+    display: inline-block;
 }
-
 
 
 /*///////////Sign-up section/////////////*/
@@ -395,6 +399,21 @@ table tr:hover {
 /* Media Query*/
 
 @media only screen and (max-width: 800px) {
+
+/*    Sign-in section*/
+    label#signin-label, #password-label {
+        font-size: 1.2rem;
+        width: 50%;
+        margin: auto;
+    }
+
+    input#username, #password {
+        width: 30%;
+        padding-left: 10px;
+        border: none;
+        border-radius: 10px
+    }
+
     /*Purpose section*/
 
     div#site-description {
@@ -440,6 +459,16 @@ table tr:hover {
     div#submit-screen img {
         width: 80%;
         margin: 40px;
+    }
+
+/*    Sign in section*/
+    section#sign-up {
+        min-height: 200px;
+        padding: 30px 0;
+        background-color: #ffce00;
+        color: #2c3531;
+        font-size: 1.0em;
+        line-height: 1.5em;
     }
 }
 
