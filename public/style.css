@@ -218,12 +218,12 @@ p#about-one {
     font-size: 1.4em;
     text-align: left;
     padding-left: 50px;
+    line-height: 1.4em;
 }
 
 div#site-infographic {
     width: 60%;
     margin: auto;
-
 }
 
 img#infographic {
@@ -352,13 +352,6 @@ form label {
     line-height: 2em;
 }
 
-form input {
-    width: 70%;
-    border: 1px solid black;
-    line-height: 2em;
-    font-family: 'Roboto', serif;
-}
-
 form button:hover {
     background-color: lightgray;
 }
@@ -368,6 +361,8 @@ input#date, #miles{
     padding-left: 10px;
     border: none;
     border-radius: 10px;
+    line-height: 2em;
+    font-family: 'Roboto', serif;
 }
 
 button#convert-button {
@@ -425,6 +420,10 @@ table tr:hover {
 
 @media only screen and (max-width: 800px) {
 
+    header {
+        font-size: 1em;
+    }
+
 /*Nav*/
     a#main-logo {
         font-size: 1.2em;
@@ -454,6 +453,48 @@ table tr:hover {
         font-size: 0.9em;
     }
 
+/*Header Section*/
+
+    header#page-title {
+        font-size: 2.5em;
+    }
+
+/*purpose section*/
+    h1#purpose-header{
+        width: 15%;
+        font-size: 1.5em;
+        vertical-align: top;
+    }
+
+    div#site-description {
+    width: 50%;
+    }
+
+    p#about-one {
+        font-size: 1.1em;
+        line-height: 1.2em;
+    }
+
+    div#how-it-works{
+        font-size: 1.1em;
+    }
+
+/*signup section*/
+    label#label-username, #label-password, #label-repassword {
+        font-size: 1em;
+    }
+
+    input#signup-username, #signup-password, #confirm-password {
+        font-size: 0.9em;
+    }
+
+    button#js-signup-button {
+        width: 80px;
+        font-size: 0.9em;
+    }
+
+/*User overall numbers section*/
+
     section#miles-total div div.card-name {
         font-size: 1.2em;
         line-height: 1em;
@@ -462,6 +503,113 @@ table tr:hover {
 
     h3#green-car {
         margin-bottom: 1rem;
+    }
+
+/*convert form section*/
+    form label {
+        font-size: 1em;
+        line-height: 2.0em;
+    }
+
+    button#convert-button {
+        width: 80px;
+        font-size: 0.9em;
+    }
+
+/*table section*/
+
+    table th {
+        font-size: 1em;
+    }
+
+    table tr {
+        font-size: 0.9em;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+
+    header {
+        font-size: 1em;
+    }
+
+    /*Nav*/
+    a#main-logo {
+        font-size: 1em;
+    }
+
+    div#nav-links {
+        font-size: 0.8em;
+    }
+
+    /*sign-in Section*/
+    section#sign-in-section {
+        font-size: 0.8em;
+    }
+
+    input#username, #password {
+        width: 40%;
+        font-size: 0.9em;
+    }
+
+    button#js-signin-button {
+        width: 70px;
+        font-size: 0.9em;
+        padding: 7px;
+    }
+
+    /*Header Section*/
+
+    header#page-title {
+        font-size: 2.2em;
+    }
+
+    /*purpose section*/
+    h1#purpose-header{
+        font-size: 1.2em;
+    }
+
+    p#about-one {
+        font-size: 1em;
+        line-height: 1.4em;
+    }
+
+    div#how-it-works{
+        font-size: 0.9em;
+    }
+
+    /*User overall numbers section*/
+
+    section#miles-total div div.card-name {
+        font-size: 1em;
+        line-height: 1em;
+        text-align: center;
+    }
+
+    h3#green-car {
+        margin-bottom: 1rem;
+    }
+
+    /*convert form section*/
+    form label {
+        font-size: 1em;
+        line-height: 2.0em;
+    }
+
+    button#convert-button {
+        width: 80px;
+        font-size: 0.9em;
+    }
+
+    /*table section*/
+
+    table th {
+        font-size: 1em;
+    }
+
+    table tr {
+        font-size: 0.9em;
     }
 
 }
