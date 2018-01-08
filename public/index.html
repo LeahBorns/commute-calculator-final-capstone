@@ -47,19 +47,28 @@
 
 
             <section id="purpose-statement">
-                <header>
-                    <h3>What is Co<sub>2</sub>mmute Calculator?</h3>
-                </header>
+                <h1 id="purpose-header">What is Co<sub>2</sub>mmute Calculator?</h1>
                    <div id="site-description">
-                    <p>Co2mmute calculator is a simple way for bike commuters to keep track of their milage and the positive impact they are having each time they decide to pedal vs drive.</p>
+                    <p id="about-one">Co<sub>2</sub>mmute calculator is a simple way for bike commuters to keep track of their milage and calculate the amount of CO<sub>2</sub> diverted each time they pedal vs drive.</p>
+
                 </div>
                    <div id="site-infographic">
                     <img id="infographic" src="/images/co2mmuteInfographic.jpg" alt="cars infographic">
                 </div>
+                <div id="submit-screen">
+                    <img src="/images/info-screenshot" alt="screenshots">
+                </div>
+                <div id="how-it-works">
 
+                    <h1>Calculate your diverted CO<sub>2</sub></h1>
+                    <ol>
+                        <li>Input your daily bike mileage into our simple calculator</li><br>
+                        <li>Press submit and see how much co<sub>2</sub> you diverted by commuting</li>
+                    </ol>
+                </div>
             </section>
             <section id="sign-up">
-                <header><h3>Start Calculating</h3></header>
+                <header><h1>Start Calculating</h1></header>
               <form id="signup-form">
                   <div>
                       <label for="username"> Username</label>
@@ -83,15 +92,28 @@
             <main id="profile-page" role="main">
             <section id="miles-total">
                 <header>
-                    <h2><span id="profileUsername">Username </span>Miles Total</h2>
+                    <h1><span id="profileUsername">'Username' </span>Miles Total</h1>
                     <p id="miles-number">500 miles</p>
                 </header>
-                <div id="green-car"><h3>Green <img src="/images/co2mmute-green.png" alt="green car"></h3> <br> <p>50mpg</p><p>50 lbs/co2</p></div>
-                <div id="sedan-car"><h3>Average Sedan <img src="/images/co2mmute-average.png" alt="average car"></h3> <br><p>35mpg</p> <p>100 lbs/co2</p></div>
-                <div id="suv-car"><h3>Average SUV <img src="/images/co2mmute-suv.png" alt="average suv"></h3> <br><p>18mpg</p> <p>200 lbs/co2</p></div>
+                <div id="green-car">
+                    <div class="card-name">
+                        <h3>Green</h3><p>50mpg</p>
+                    </div>
+                    <img src="/images/co2mmute-green.png" alt="green car"> <br> <p>50 lbs/co2</p>
+                </div>
+                <div id="sedan-car">
+                    <div class="card-name">
+                        <h3>Average Sedan</h3><p>25.5mpg</p>
+                    </div>
+                    <img src="/images/co2mmute-average.png" alt="average car"><br> <p>100 lbs/co2</p>
+                    </div>
+                <div id="suv-car">
+                    <div class="card-name">
+                        <h3>Average SUV</h3><p>18mpg</p>
+                    </div> <img src="/images/co2mmute-suv.png" alt="average suv"> <br> <p>200 lbs/co2</p></div>
             </section>
             <section id="miles-input">
-                <header><h2>How many miles did you ride today?</h2></header>
+                <header><h1>How many miles did you ride today?</h1></header>
                 <form id="miles-form">
                     <div>
                         <label for="miles">Date</label>
@@ -106,7 +128,7 @@
             </section>
             <section>
                 <header>
-                    <h2>Miles to date</h2>
+                    <h1>Miles to date</h1>
                 </header>
                 <table>
                     <tr>
