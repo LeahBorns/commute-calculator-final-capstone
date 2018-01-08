@@ -2,27 +2,31 @@
 
 <html lang='en'>
     <head>
-        <title>Co2mmute Calculator landing page</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Co2mmute Calculator landing page</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <nav role="navigation">
-        <ul>
-            <a href="#" id="main-logo">Co<sub>2</sub>mmute Calculator</a>
-            <a href="#purpose-statement">About</a>
-            <a href="#sign-up">Sign Up</a>
-        </ul>
+            <div id="nav-logo">
+                <a href="#" id="main-logo">Co<sub>2</sub>mmute Calculator</a>
+            </div>
+            <div id="nav-links">
+                <a href="#purpose-statement">About</a>
+                <a href="#sign-up">Sign Up</a>
+            </div>
         <div id="sign-in-buttons">
             <button id="js-signin-link">Sign-in</button>
             <button id="js-signout-link">Sign-out</button>
         </div>
         </nav>
-        <main id="sign-in-page" role="main">
+        <main id="sign-in-page" class="wrapper" role="main">
            <section id="sign-in-section">
                <header id="sign-in-header"><h3>Sign-in to Co<sub>2</sub>mmute Calculator</h3></header>
                <form id="signin-form">
@@ -40,7 +44,7 @@
            </section>
 
             <section id="main-header" >
-            <header id="page-title"  role="banner">
+            <header id="page-title" role="banner">
                 <p>Co<sub>2</sub>mmute Calculator</p>
             </header>
             </section>
@@ -59,7 +63,7 @@
                     <img src="/images/info-screenshot" alt="screenshots">
                 </div>
                 <div id="how-it-works">
-                    <h1>Calculate your diverted CO<sub>2</sub></h1>
+                    <h2>Calculate your diverted CO<sub>2</sub></h2><br>
                     <ol>
                         <li>Input your daily bike mileage into our simple calculator</li><br>
                         <li>Press CONVERT and see how much CO<sub>2</sub> you diverted by commuting</li>
@@ -70,15 +74,15 @@
                 <header><h1>Start Calculating</h1></header>
               <form id="signup-form">
                   <div>
-                      <label for="username"> Username</label>
+                      <label id="label-username" for="username"> Username</label>
                       <input type="text" placeholder="Username" name="username" id="signup-username"/>
                   </div>
                   <div>
-                      <label for="password">Password</label>
+                      <label id="label-password" for="password">Password</label>
                       <input type="text" placeholder="Password" name="password" id="signup-password"/>
                   </div>
                   <div>
-                      <label for="confirm-password">Re-enter Password</label>
+                      <label id="label-repassword" for="confirm-password">Re-enter Password</label>
                       <input type="text" placeholder="Re-enter password" name="confirm-password" id="confirm-password"/>
                   </div>
                   <button id="js-signup-button" type="submit">Sign up</button>
@@ -88,7 +92,7 @@
 
 <!--            Mileage page-->
 
-            <main id="profile-page" role="main">
+            <main id="profile-page">
             <section id="miles-total">
                 <header>
                     <h1><span id="profileUsername">'Username' </span>Miles Total</h1>
@@ -96,20 +100,20 @@
                 </header>
                 <div id="green-car">
                     <div class="card-name">
-                        <h3>Green</h3><p>50mpg</p>
+                        <h3 id="green-car">Green</h3><p class="mpg">50mpg</p>
                     </div>
-                    <img src="/images/co2mmute-green.png" alt="green car"> <br> <p>50 lbs/co2</p>
+                    <img src="/images/co2mmute-green.png" alt="green car"><p>50 lbs/co2</p>
                 </div>
                 <div id="sedan-car">
                     <div class="card-name">
-                        <h3>Average Sedan</h3><p>25.5mpg</p>
+                        <h3>Average Sedan</h3><p class="mpg">25.5mpg</p>
                     </div>
-                    <img src="/images/co2mmute-average.png" alt="average car"><br> <p>100 lbs/co2</p>
+                    <img src="/images/co2mmute-average.png" alt="average car"><p>100 lbs/co2</p>
                     </div>
                 <div id="suv-car">
                     <div class="card-name">
-                        <h3>Average SUV</h3><p>18mpg</p>
-                    </div> <img src="/images/co2mmute-suv.png" alt="average suv"> <br> <p>200 lbs/co2</p></div>
+                        <h3>Average SUV</h3><p class="mpg">18mpg</p>
+                    </div> <img src="/images/co2mmute-suv.png" alt="average suv"><p>200 lbs/co2</p></div>
             </section>
             <section id="miles-input">
                 <header><h1>How many miles did you ride today?</h1></header>
@@ -170,7 +174,6 @@
                         <td>7 miles</td>
                         <td>30 lbs</td>
                     </tr>
-                    <br>
                     <tr>
                         <th>Total</th>
                         <td></td>
