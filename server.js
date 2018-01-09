@@ -1,6 +1,5 @@
 const User = require('./models/user');
-//const activity = require('./models/activity');
-//const activityCategory = require('./models/activityCategory');
+const co2Divert = require('./models/co2Divert');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -69,11 +68,11 @@ function closeServer() {
 //POST -> Creating a new user (Registration)
 app.post('/signup', (req, res) => {
     let username = req.body.username;
-//        console.log(username);
+    //        console.log(username);
     username = username.trim();
 
     let password = req.body.password;
-//        console.log(password);
+    //        console.log(password);
     password = password.trim();
 
     bcrypt.genSalt(10, (err, salt) => {
@@ -119,38 +118,38 @@ app.post('/signin/', function (req, res) {
     const pw = req.body.password;
     User
         .findOne({
-        username: req.body.username
-    }, function (err, items) {
-        if (err) {
-            return res.status(500).json({
-                message: "Internal server error"
-            });
-        }
-        if (!items) {
-            //wrong username
-            return res.status(401).json({
-                message: 'Not Found!'
-            });
-        } else {
-            items.validatePassword(req.body.password, function (err, isValid) {
-                if (err) {
-                    //                        console.log('There was an error validating the password.');
-                    return res.status(401).json({
-                        message: 'There was an error validating the password.'
-                    });
-                }
-                if (!isValid) {
-                    return res.status(401).json({
-                        message: 'Invalid user'
-                    });
-                } else {
-                    var logInTime = new Date();
-                    //                        console.log('User logged in:' + req.body.username + 'at' + logInTime);
-                    return res.json(items);
-                }
-            });
-        };
-    });
+            username: req.body.username
+        }, function (err, items) {
+            if (err) {
+                return res.status(500).json({
+                    message: "Internal server error"
+                });
+            }
+            if (!items) {
+                //wrong username
+                return res.status(401).json({
+                    message: 'Not Found!'
+                });
+            } else {
+                items.validatePassword(req.body.password, function (err, isValid) {
+                    if (err) {
+                        //                        console.log('There was an error validating the password.');
+                        return res.status(401).json({
+                            message: 'There was an error validating the password.'
+                        });
+                    }
+                    if (!isValid) {
+                        return res.status(401).json({
+                            message: 'Invalid user'
+                        });
+                    } else {
+                        var logInTime = new Date();
+                        //                        console.log('User logged in:' + req.body.username + 'at' + logInTime);
+                        return res.json(items);
+                    }
+                });
+            };
+        });
 });
 
 
@@ -158,73 +157,60 @@ app.post('/signin/', function (req, res) {
 // Completing a new activity
 
 
-app.get('/activity-feed-by-username/:username', (req, res) => {
+app.get('/tableDataByUsername/:username', (req, res) => {
 
-    activity.find({
+    co2Divert.find({
         username: req.params.username
-    }, (err, activity) => {
+    }, (err, co2Divert) => {
 
         if (err) {
             res.send(err)
         }
 
-        res.json(activity)
+        res.json(co2Divert)
     })
 })
 
-app.post('/activity/add', (req, res) => {
+app.post('/co2Divert/add', (req, res) => {
 
 
-    let image = req.body.activityImage;
-    let name = req.body.activityName;
-    let points = req.body.activityPoints;
-    let description = req.body.activityDescription;
+    let currentDate = req.body.currentDate;
+    let dailyMileage = req.body.dailyMileage;
     let username = req.body.username;
 
-
-
-    activity.create({
+    co2Divert.create({
         username: username,
-        name: name,
-        points: points,
-        description: description,
-        image: image
-    }, (err, item) => {
+        currentDate: currentDate,
+        dailyMileage: dailyMileage
+
+    }, function (err, item) {
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'
             });
         }
-        if (item) {
-            console.log(`activity \`${name}\` completed.`);
-            return res.json(item);
-        }
+        return res.json(item);
     });
 });
 
 //Take completed activity and put in feed
-app.get('/activity/show', function (req, res) {
+app.get('/co2Divert/show', function (req, res) {
     //    console.log(req.params.user);
-    activity
+    co2Divert
         .find()
-        .sort()
-        .then(function (activity) {
-        let activityOutput = [];
-        activity.map(function (activity) {
-            if (activity.user == req.params.user) {
-                activityOutput.push(activity);
-            }
-        });
-        res.json({
-            activityOutput
-        });
-    })
+        .sort("currentDate")
+        .then(function (item) {
+
+            res.json({
+                item
+            });
+        })
         .catch(function (err) {
-        console.error(err);
-        res.status(500).json({
-            message: 'Internal server error'
+            console.error(err);
+            res.status(500).json({
+                message: 'Internal server error'
+            });
         });
-    });
 });
 
 

@@ -1,195 +1,228 @@
 <!DOCTYPE html>
 
 <html lang='en'>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Co2mmute Calculator landing page</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
-<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
-        <nav role="navigation">
-            <div id="messageBox" class="demoMessage">
-                <span>Loading ...</span>
-                <!--            <button id="hideBtn">X</button>-->
-            </div>
-            <div id="nav-logo">
-                <a href="#" id="main-logo">Co<sub>2</sub>mmute Calculator</a>
-            </div>
-            <div id="nav-links">
-                <a href="#purpose-statement">About</a>
-                <a href="#sign-up">Sign Up</a>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Co2mmute Calculator landing page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
+    <!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav role="navigation">
+        <div id="messageBox" class="demoMessage">
+            <span>Loading ...</span>
+            <!--            <button id="hideBtn">X</button>-->
+        </div>
+        <div id="nav-logo">
+            <a href="#" id="main-logo">Co<sub>2</sub>mmute Calculator</a>
+        </div>
+        <div id="nav-links">
+            <a id="about" href="#purpose-statement">About</a>
+            <a id="signup" href="#sign-up">Sign Up</a>
+        </div>
         <div id="sign-in-buttons">
             <button id="js-signin-link">Sign-in</button>
             <button id="js-signout-link">Sign-out</button>
         </div>
-        </nav>
-        <main id="sign-in-page" class="wrapper" role="main">
-           <section id="sign-in-section">
-               <header id="sign-in-header"><h3>Sign-in to Co<sub>2</sub>mmute Calculator</h3></header>
-               <form id="signin-form">
-                   <div>
-                       <label id="signin-label" for="username"> Username</label>
-                       <input type="text" placeholder="Username" name="username" id="username"/>
-                   </div>
-                   <div>
-                       <label id="password-label" for="password">Password</label>
-                       <input type="text" placeholder="Password" name="password" id="password"/>
-                   </div>
-                   <button id="js-signin-button" type="submit">Sign in</button>
-               </form>
-               <p>Not registered yet? <a href="#sign-up">Click here</a></p>
-           </section>
+    </nav>
+    <main id="sign-in-page" class="wrapper" role="main">
+        <section id="sign-in-section">
+            <header id="sign-in-header">
+                <h3>Sign-in to Co<sub>2</sub>mmute Calculator</h3>
+            </header>
+            <form id="signin-form" action="/login/" method="post">
+                <div>
+                    <label id="signin-label" for="username"> Username</label>
+                    <input type="text" placeholder="Username" name="username" id="username" />
+                </div>
+                <div>
+                    <label id="password-label" for="password">Password</label>
+                    <input type="password" placeholder="Password" name="password" id="password" />
+                </div>
+                <button id="js-signin-button" type="submit">Sign in</button>
+            </form>
+            <p>Not registered yet? <a href="#sign-up">Click here</a></p>
+        </section>
 
-            <section id="main-header" >
+        <section id="main-header">
             <header id="page-title" role="banner">
                 <p>Co<sub>2</sub>mmute Calculator</p>
             </header>
-            </section>
+        </section>
 
 
-            <section id="purpose-statement">
-                <h2 id="purpose-header">What is Co<sub>2</sub>mmute Calculator?</h2>
-                   <div id="site-description">
-                    <p id="about-one">Co<sub>2</sub>mmute calculator is a simple way for bike commuters to keep track of their milage and calculate the amount of CO<sub>2</sub> diverted each time they pedal vs drive.</p>
+        <section id="purpose-statement">
+            <h2 id="purpose-header">What is Co<sub>2</sub>mmute Calculator?</h2>
+            <div id="site-description">
+                <p id="about-one">Co<sub>2</sub>mmute calculator is a simple way for bike commuters to keep track of their milage and calculate the amount of CO<sub>2</sub> diverted each time they pedal vs drive.</p>
 
+            </div>
+            <div id="site-infographic">
+                <img id="infographic" src="/images/co2mmuteInfographic.jpg" alt="cars infographic">
+            </div>
+            <div id="submit-screen">
+                <img src="/images/info-screenshot.jpg" alt="screenshots">
+            </div>
+            <div id="how-it-works">
+                <h3>Calculate your diverted CO<sub>2</sub></h3><br>
+                <ol>
+                    <li>Input your daily bike mileage into our simple calculator</li><br>
+                    <li>Press CONVERT and see how much CO<sub>2</sub> you diverted by commuting</li>
+                </ol>
+            </div>
+        </section>
+        <section id="sign-up">
+            <header>
+                <h2>Start Calculating</h2>
+            </header>
+            <form id="signup-form" action="/signup/" method="post">
+                <div>
+                    <label id="label-username" for="username"> Username</label>
+                    <input type="text" placeholder="Username" name="username" id="signup-username" />
                 </div>
-                   <div id="site-infographic">
-                    <img id="infographic" src="/images/co2mmuteInfographic.jpg" alt="cars infographic">
+                <div>
+                    <label id="label-password" for="password">Password</label>
+                    <input type="password" placeholder="Password" name="password" id="signup-password" />
                 </div>
-                <div id="submit-screen">
-                    <img src="/images/info-screenshot.jpg" alt="screenshots">
+                <div>
+                    <label id="label-repassword" for="confirm-password">Re-enter Password</label>
+                    <input type="password" placeholder="Re-enter password" name="confirm-password" id="confirm-password" />
                 </div>
-                <div id="how-it-works">
-                    <h3>Calculate your diverted CO<sub>2</sub></h3><br>
-                    <ol>
-                        <li>Input your daily bike mileage into our simple calculator</li><br>
-                        <li>Press CONVERT and see how much CO<sub>2</sub> you diverted by commuting</li>
-                    </ol>
-                </div>
-            </section>
-            <section id="sign-up">
-                <header><h2>Start Calculating</h2></header>
-              <form id="signup-form">
-                  <div>
-                      <label id="label-username" for="username"> Username</label>
-                      <input type="text" placeholder="Username" name="username" id="signup-username"/>
-                  </div>
-                  <div>
-                      <label id="label-password" for="password">Password</label>
-                      <input type="text" placeholder="Password" name="password" id="signup-password"/>
-                  </div>
-                  <div>
-                      <label id="label-repassword" for="confirm-password">Re-enter Password</label>
-                      <input type="text" placeholder="Re-enter password" name="confirm-password" id="confirm-password"/>
-                  </div>
-                  <button id="js-signup-button" type="submit">Sign up</button>
-              </form>
-            </section>
-        </main>
+                <button id="js-signup-button" type="submit">Sign up</button>
+            </form>
+        </section>
+    </main>
 
-<!--            Mileage page-->
+    <!--            Mileage page-->
 
-            <main id="profile-page">
-            <section id="miles-total">
-                <header>
-                    <h2><span id="profileUsername">'Username' </span>Miles Total</h2>
-                    <p id="miles-number">500 miles</p>
-                </header>
-                <div id="green-car">
-                    <div class="card-name">
-                        <h3 id="green-car">Green</h3><p class="mpg">50mpg</p>
-                    </div>
-                    <img src="/images/co2mmute-green.png" alt="green car"><p>50 lbs/co2</p>
+    <main id="profile-page">
+        <section id="miles-total">
+            <header>
+                <h2><span id="profileUsername">'Username' </span>Total Mileage</h2>
+                <p id="miles-number">500 miles</p>
+            </header>
+            <div id="green-car">
+                <div class="card-name">
+                    <h3 id="green-car">Green</h3>
+                    <p class="mpg">50mpg</p>
                 </div>
-                <div id="sedan-car">
-                    <div class="card-name">
-                        <h3>Average Sedan</h3><p class="mpg">25.5mpg</p>
-                    </div>
-                    <img src="/images/co2mmute-average.png" alt="average car"><p>100 lbs/co2</p>
-                    </div>
-                <div id="suv-car">
-                    <div class="card-name">
-                        <h3>Average SUV</h3><p class="mpg">18mpg</p>
-                    </div> <img src="/images/co2mmute-suv.png" alt="average suv"><p>200 lbs/co2</p></div>
-            </section>
-            <section id="miles-input">
-                <header><h2>How many miles did you ride today?</h2></header>
-                <form id="miles-form">
-                    <div>
-                        <label for="miles">Date</label>
-                        <input type="date" name="date" id="date"/>
-                    </div>
-                    <div>
-                        <label for="miles">Miles</label>
-                        <input type="text" placeholder="Miles" name="miles" id="miles"/>
-                    </div>
-                    <button id="convert-button" type="submit">Convert</button>
-                </form>
-            </section>
-            <section>
-                <header>
-                    <h2>Miles to date</h2>
-                </header>
-                <table>
-                    <tr>
-                        <th>Date</th>
-                        <th>Miles</th>
-                        <th>CO<sub>2</sub> Diverted</th>
-                    </tr>
-                    <tr>
-                        <td>12/21/2017</td>
-                        <td>10 miles</td>
-                        <td>40 lbs</td>
-                    </tr>
-                    <tr>
-                        <td>12/22/2017</td>
-                        <td>5 miles</td>
-                        <td>20 lbs</td>
-                    </tr>
-                    <tr>
-                        <td>12/23/2017</td>
-                        <td>30 miles</td>
-                        <td>160 lbs</td>
-                    </tr>
-                    <tr>
-                        <td>12/24/2017</td>
-                        <td>16 miles</td>
-                        <td>80 lbs</td>
-                    </tr>
-                    <tr>
-                        <td>12/25/2017</td>
-                        <td>3 miles</td>
-                        <td>5 lbs</td>
-                    </tr>
-                    <tr>
-                        <td>12/26/2017</td>
-                        <td>5 miles</td>
-                        <td>20 lbs</td>
-                    </tr>
-                    <tr>
-                        <td>12/27/2017</td>
-                        <td>7 miles</td>
-                        <td>30 lbs</td>
-                    </tr>
-                    <tr>
-                        <th>Total</th>
-                        <td></td>
-                        <td>355 lbs</td>
-                    </tr>
-                </table>
-            </section>
-        </main>
-        <footer role="contentinfo">
-            footer
-        </footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="client.js" type="text/javascript"></script>
-    </body>
+                <img src="/images/co2mmute-green.png" alt="green car">
+                <p>50 lbs/co2</p>
+            </div>
+            <div id="sedan-car">
+                <div class="card-name">
+                    <h3>Average Sedan</h3>
+                    <p class="mpg">25.5mpg</p>
+                </div>
+                <img src="/images/co2mmute-average.png" alt="average car">
+                <p>100 lbs/co2</p>
+            </div>
+            <div id="suv-car">
+                <div class="card-name">
+                    <h3>Average SUV</h3>
+                    <p class="mpg">18mpg</p>
+                </div> <img src="/images/co2mmute-suv.png" alt="average suv">
+                <p>200 lbs/co2</p>
+            </div>
+        </section>
+        <section id="miles-input">
+            <header>
+                <h2>How many miles did you ride today?</h2>
+            </header>
+            <form id="miles-form">
+                <div>
+                    <label for="miles">Date</label>
+                    <input type="date" name="date" id="date" />
+                </div>
+                <div>
+                    <label for="miles">Miles</label>
+                    <input type="text" placeholder="Miles" name="miles" id="miles" />
+                </div>
+                <button id="convert-button" type="submit">Convert</button>
+            </form>
+        </section>
+        <section>
+            <header>
+                <h2>Miles to date</h2>
+            </header>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Miles</th>
+                    <th>Green CO<sub>2</sub>Divert</th>
+                    <th>Sedan CO<sub>2</sub>Divert</th>
+                    <th>SUV CO<sub>2</sub>Divert</th>
+                </tr>
+                <tr id="table-data">
+                    <td>12/21/2017</td>
+                    <td>10 miles</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                </tr>
+                <tr>
+                    <td>12/22/2017</td>
+                    <td>5 miles</td>
+                    <td>20 lbs</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                </tr>
+                <tr>
+                    <td>12/23/2017</td>
+                    <td>30 miles</td>
+                    <td>160 lbs</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                </tr>
+                <tr>
+                    <td>12/24/2017</td>
+                    <td>16 miles</td>
+                    <td>80 lbs</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                </tr>
+                <tr>
+                    <td>12/25/2017</td>
+                    <td>3 miles</td>
+                    <td>5 lbs</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                </tr>
+                <tr>
+                    <td>12/26/2017</td>
+                    <td>5 miles</td>
+                    <td>20 lbs</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                </tr>
+                <tr>
+                    <td>12/27/2017</td>
+                    <td>7 miles</td>
+                    <td>30 lbs</td>
+                    <td>40 lbs</td>
+                    <td>40 lbs</td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="table-total-miles">355 lbs</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <p id="footer-note">Built by<a href="https://github.com/LeahBorns">Leah Borns</a></p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="client.js" type="text/javascript"></script>
+</body>
+
 </html>

@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -43,16 +44,26 @@ header {
     text-align: center;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Roboto Slab', serif;
 }
 
 /*Lots of Nav stuff*/
-nav, footer {
+
+nav,
+footer {
     padding: 1% 0;
     background-color: #262228;
     color: white;
     font-family: 'Roboto', sans-serif;
+}
+
+p#footer-note {
+    text-align: center;
+    font-size: 1em;
 }
 
 nav {
@@ -126,7 +137,8 @@ div#sign-in-buttons {
     margin: auto;
 }
 
-button#js-signin-link, #js-signout-link {
+button#js-signin-link,
+#js-signout-link {
     color: white;
     letter-spacing: 1px;
     background-color: #0375B4;
@@ -137,11 +149,29 @@ button#js-signin-link, #js-signout-link {
     font-family: 'Roboto', sans-serif;
 }
 
-button#js-signin-link:hover, #js-signout-link:hover {
+button#js-signin-link,
+#js-signout-link {
+    color: white;
+    letter-spacing: 1px;
+    background-color: #0375B4;
+    width: 90px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+button#js-signout-link {
+    width: 200px;
+}
+
+button#js-signin-link:hover,
+#js-signout-link:hover {
     background-color: #0394e2;
 }
 
 /*Sign-in section*/
+
 section#sign-in-section {
     padding: 30px 0;
     background-color: #0375B4;
@@ -162,14 +192,16 @@ form#signin-form {
     width: 40%;
 }
 
-label#signin-label, #password-label {
+label#signin-label,
+#password-label {
     font-size: 1em;
     width: 22%;
     margin: auto;
     color: white;
 }
 
-input#username, #password {
+input#username,
+#password {
     width: 30%;
     padding-left: 10px;
     border: none;
@@ -228,7 +260,7 @@ section#purpose-statement {
 }
 
 
-h2#purpose-header{
+h2#purpose-header {
     width: 15%;
     color: #262228;
     display: inline-block;
@@ -264,7 +296,7 @@ img#infographic {
     margin: auto;
 }
 
-div#how-it-works{
+div#how-it-works {
     width: 25%;
     display: inline-block;
     font-size: 1.2em;
@@ -273,7 +305,7 @@ div#how-it-works{
 }
 
 div#submit-screen {
-    display:inline-block;
+    display: inline-block;
     width: 60%;
     vertical-align: top;
     margin-top: 100px;
@@ -295,12 +327,16 @@ section#sign-up {
     line-height: 3em;
 }
 
-label#label-username, #label-password, #label-repassword {
+label#label-username,
+#label-password,
+#label-repassword {
     display: block;
     font-size: 1.2em;
 }
 
-input#signup-username, #signup-password, #confirm-password {
+input#signup-username,
+#signup-password,
+#confirm-password {
     width: 40%;
     padding-left: 10px;
     border: none;
@@ -361,6 +397,10 @@ section#miles-total div div.card-name {
     text-align: center;
 }
 
+h3#green-car {
+    margin-bottom: 1em;
+}
+
 p.mpg {
     color: #262228;
 }
@@ -392,7 +432,8 @@ form button:hover {
     background-color: lightgray;
 }
 
-input#date, #miles{
+input#date,
+#miles {
     width: 60%;
     padding-left: 10px;
     border: none;
@@ -420,6 +461,7 @@ button#convert-button:hover {
 
 
 /*miles total table*/
+
 section:nth-child(3) {
     padding-top: 5%;
     padding-bottom: 15%;
@@ -460,7 +502,7 @@ table tr:hover {
         font-size: 1em;
     }
 
-/*Nav*/
+    /*Nav*/
     a#main-logo {
         font-size: 1.2em;
     }
@@ -469,17 +511,19 @@ table tr:hover {
         font-size: 0.9em;
     }
 
-    button#js-signin-link, #js-signout-link {
+    button#js-signin-link,
+    #js-signout-link {
         width: 70px;
         font-size: 0.7em;
     }
 
-/*sign-in Section*/
+    /*sign-in Section*/
     section#sign-in-section {
         font-size: 0.9em;
     }
 
-    input#username, #password {
+    input#username,
+    #password {
         width: 30%;
         font-size: 0.9em;
     }
@@ -489,21 +533,20 @@ table tr:hover {
         font-size: 0.9em;
     }
 
-/*Header Section*/
-
+    /*Header Section*/
     header#page-title {
         font-size: 2.5em;
     }
 
-/*purpose section*/
-    h2#purpose-header{
+    /*purpose section*/
+    h2#purpose-header {
         width: 20%;
         font-size: 1.5em;
         vertical-align: top;
     }
 
     div#site-description {
-    width: 50%;
+        width: 50%;
     }
 
     p#about-one {
@@ -511,16 +554,20 @@ table tr:hover {
         line-height: 1.2em;
     }
 
-    div#how-it-works{
+    div#how-it-works {
         font-size: 1.1em;
     }
 
-/*signup section*/
-    label#label-username, #label-password, #label-repassword {
+    /*signup section*/
+    label#label-username,
+    #label-password,
+    #label-repassword {
         font-size: 1em;
     }
 
-    input#signup-username, #signup-password, #confirm-password {
+    input#signup-username,
+    #signup-password,
+    #confirm-password {
         font-size: 0.9em;
     }
 
@@ -529,8 +576,7 @@ table tr:hover {
         font-size: 0.9em;
     }
 
-/*User overall numbers section*/
-
+    /*User overall numbers section*/
     section#miles-total div div.card-name {
         font-size: 1.2em;
         line-height: 1em;
@@ -541,7 +587,7 @@ table tr:hover {
         margin-bottom: 1rem;
     }
 
-/*convert form section*/
+    /*convert form section*/
     form label {
         font-size: 1em;
         line-height: 2.0em;
@@ -552,8 +598,7 @@ table tr:hover {
         font-size: 0.9em;
     }
 
-/*table section*/
-
+    /*table section*/
     table th {
         font-size: 1em;
     }
@@ -567,7 +612,6 @@ table tr:hover {
 @media only screen and (max-width: 640px) {
 
     /*Nav*/
-
     div#nav-logo {
         width: 41%;
     }
@@ -581,7 +625,8 @@ table tr:hover {
         font-size: 0.8em;
     }
 
-    button#js-signin-link, #js-signout-link {
+    button#js-signin-link,
+    #js-signout-link {
         padding: 7px;
     }
 
@@ -590,7 +635,8 @@ table tr:hover {
         font-size: 0.8em;
     }
 
-    input#username, #password {
+    input#username,
+    #password {
         width: 40%;
         font-size: 0.9em;
     }
@@ -602,13 +648,12 @@ table tr:hover {
     }
 
     /*Header Section*/
-
     header#page-title {
         font-size: 2.2em;
     }
 
     /*purpose section*/
-    h1#purpose-header{
+    h1#purpose-header {
         font-size: 1.2em;
     }
 
@@ -635,14 +680,14 @@ table tr:hover {
         margin-top: 100px;
     }
 
-/*sign-up section*/
-
-    input#signup-username, #signup-password, #confirm-password {
+    /*sign-up section*/
+    input#signup-username,
+    #signup-password,
+    #confirm-password {
         line-height: 1.5em;
     }
 
     /*User overall numbers section*/
-
     section#miles-total div {
         width: 30%;
         padding: 12px;
@@ -658,8 +703,8 @@ table tr:hover {
     }
 
     /*convert form section*/
-
-    input#date, #miles{
+    input#date,
+    #miles {
         width: 60%;
         font-size: 0.9em;
         line-height: 1.8em;
@@ -673,7 +718,6 @@ table tr:hover {
 
 @media only screen and (max-width: 480px) {
     /*Nav*/
-
     nav {
         position: static;
     }
@@ -740,13 +784,15 @@ table tr:hover {
         font-size: 0.8em;
     }
 
-    label#signin-label, #password-label {
+    label#signin-label,
+    #password-label {
         width: 80%;
         display: block;
         margin: auto;
     }
 
-    input#username, #password {
+    input#username,
+    #password {
         width: 80%;
         font-size: 0.9em;
         display: block;
@@ -759,7 +805,7 @@ table tr:hover {
     }
 
     /*purpose section*/
-    h2#purpose-header{
+    h2#purpose-header {
         width: 90%;
         font-size: 1.2em;
         display: block;
@@ -784,7 +830,7 @@ table tr:hover {
         margin: auto;
     }
 
-    div#how-it-works{
+    div#how-it-works {
         font-size: 1em;
         display: block;
         width: 80%;
@@ -793,17 +839,21 @@ table tr:hover {
     }
 
     div#submit-screen {
-        display:block;
+        display: block;
         width: 100%;
         margin: 10px auto;
     }
 
     /*signup section*/
-    label#label-username, #label-password, #label-repassword {
+    label#label-username,
+    #label-password,
+    #label-repassword {
         font-size: 0.9em;
     }
 
-    input#signup-username, #signup-password, #confirm-password {
+    input#signup-username,
+    #signup-password,
+    #confirm-password {
         font-size: 0.8em;
         width: 70%;
     }
@@ -813,7 +863,6 @@ table tr:hover {
     }
 
     /*User overall numbers section*/
-
     section#miles-total div {
         margin: 5px auto;
         width: 80%;
@@ -832,7 +881,8 @@ table tr:hover {
         display: block;
     }
 
-    input#date, #miles{
+    input#date,
+    #miles {
         width: 100%;
         display: block;
         margin: auto;
@@ -847,7 +897,6 @@ table tr:hover {
     }
 
     /*table section*/
-
     table {
         margin: auto;
         width: 90%;
@@ -862,6 +911,3 @@ table tr:hover {
     }
 
 }
-
-
-

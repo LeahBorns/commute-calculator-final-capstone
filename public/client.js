@@ -41,9 +41,11 @@ function showProfilePage(loggedinUserName) {
     $('#js-signout-link').show();
     $('#js-signout-link').text("Sign out " + loggedinUserName);
     $('#js-signin-link').hide();
-    $('#profileUsername').text(loggedinUserName);
-//    $('#miles-number').text(currentScore + myActivities.activityPoints);
-//    displayProfileActivities(myActivities);
+    $('#about').hide();
+    $('#signup').hide();
+    $('#profileUsername').text(loggedinUserName + " ");
+    //    $('#miles-number').text(currentScore + myActivities.activityPoints);
+    //    displayProfileActivities(myActivities);
 }
 
 /////////////////SIGN-IN TRIGGERS/////////////////////////////////////////
@@ -65,9 +67,10 @@ $('#js-signin-button').on('click', function (event) {
     event.preventDefault();
 
     //AJAX call to validate login info and sign user in
-    const inputUname = $('input[name="username"]').val();
-    const inputPw = $('input[name="password"]').val();
+    const inputUname = $('#username').val();
+    const inputPw = $('#password').val();
 
+    console.log(inputUname, inputPw);
     // check for spaces, empty, undefined
     if ((!inputUname) || (inputUname.length < 1) || (inputUname.indexOf(' ') > 0)) {
 
@@ -86,29 +89,29 @@ $('#js-signin-button').on('click', function (event) {
         user = inputUname;
 
         $.ajax({
-            type: "POST",
-            url: "/signin",
-            dataType: 'json',
-            data: JSON.stringify(unamePwObject),
-            contentType: 'application/json'
-        })
+                type: "POST",
+                url: "/signin",
+                dataType: 'json',
+                data: JSON.stringify(unamePwObject),
+                contentType: 'application/json'
+            })
             .done(function (result) {
-             console.log(result);
-            loggedinUserName = result.username;
-            loggedinPassword = result.password;
+                console.log(result);
+                loggedinUserName = result.username;
+                loggedinPassword = result.password;
 
-            // show the signout link in header as soon as user is signed in
-            $('#js-signout-link').show();
+                // show the signout link in header as soon as user is signed in
+                $('#js-signout-link').show();
 
-            showProfilePage(loggedinUserName);
-        })
+                showProfilePage(loggedinUserName);
+            })
             .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-            displayError('Invalid username and password combination. Please check your username and password and try again.');
-            //                    alert('Invalid username and password combination. Pleae check your username and password and try again.');
-        });
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+                displayError('Invalid username and password combination. Please check your username and password and try again.');
+                //                    alert('Invalid username and password combination. Pleae check your username and password and try again.');
+            });
     };
 });
 
@@ -118,19 +121,18 @@ $('#js-signin-button').on('click', function (event) {
 //and brought back to sign in page to sign in
 
 $('#js-signup-button').on('click', function (event) {
-//    event.preventDefault();
 
-    const form = document.body.querySelector('#signup-form');
+    const uname = $('#signup-username').val();
+    const pw = $('#signup-password').val();
+    const confirmPw = $('#confirm-password').val();
 
-    const uname = $('input[name="username"]').val();
-    const pw = $('input[name="password"]').val();
-    const confirmPw = $('input[name="confirm-password"]').val();
-
+    console.log(uname, pw, confirmPw);
     if (uname == "") {
         displayError('Please add an username');
     } else if (pw == "") {
         displayError('Please add a password');
     } else if (pw !== confirmPw) {
+        event.preventDefault();
         displayError('Passwords must match!');
     } else {
         event.preventDefault();
@@ -143,28 +145,157 @@ $('#js-signup-button').on('click', function (event) {
         // AJAX call to send form data up to server/DB and create new user
 
         $.ajax({
-            type: 'POST',
-            url: '/signup',
-            dataType: 'json',
-            data: JSON.stringify(newUserObject),
-            contentType: 'application/json'
-        })
+                type: 'POST',
+                url: '/signup',
+                dataType: 'json',
+                data: JSON.stringify(newUserObject),
+                contentType: 'application/json'
+            })
             .done(function (result) {
-            event.preventDefault();
-            displayError('Thanks for signing up! You may now sign in with your username and password.');
-            showSignInSection();
-        })
+                event.preventDefault();
+                displayError('Thanks for signing up! You may now sign in with your username and password.');
+                showLandingPage();
+            })
             .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-            displayError('All fields must be complete before submitting.');
-        });
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+                displayError('All fields must be complete before submitting.');
+            });
     };
 });
 
 ///////////////////////////////////////////PROFILE PAGE TRIGGERS///////////////////////////////////////////////
 //PROFILE PAGE from image in nav
+$(document).on('submit', '#miles-form', function (event) {
+    event.preventDefault();
+
+    const currentDate = $(this).parent().find('#date').val();
+    const dailyMileage = $(this).parent().find('#miles').val();
+
+    console.log(currentDate, dailyMileage, loggedinUserName);
+
+    if (currentDate.length > 10) {
+        displayError('Please select a date');
+        //        alert('Must be at least 10 characters');
+    } else if (dailyMileage.length == 0) {
+        displayError('Please input mileage');
+    } else {
+        const newMileage = {
+            currentDate: currentDate,
+            dailyMileage: dailyMileage,
+            username: loggedinUserName
+        };
+
+        $.ajax({
+                type: 'POST',
+                url: '/co2Divert/add',
+                dataType: 'json',
+                data: JSON.stringify(newMileage),
+                contentType: 'application/json'
+            })
+            .done(function (result) {
+                console.log(result);
+                //                alert('Congrats! You completed todays task');
+                displayError('Congrats! You completed todays task');
+                getCo2DivertByUsername(loggedinUserName);
+            })
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+            });
+
+    };
+
+});
+
+function getCo2DivertByUsername(username) {
+
+
+    $.ajax({
+            type: 'GET',
+            url: '/co2Divert/show/' + username,
+            dataType: 'json',
+            contentType: 'application/json'
+        })
+        .done(function (result) {
+            console.log(result);
+            //        displayActivitiesFeedByUsername(activityFeed);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+
+
+//////////////////add data to table///////////////////////
+function inputTableValuesByUsername(username) {
+
+
+    $.ajax({
+            type: 'GET',
+            url: '/tableDataByUsername/' + username,
+            dataType: 'json',
+            contentType: 'application/json'
+        })
+        .done(function (tableData) {
+            console.log(tableData);
+            //        displayActivitiesFeedByUsername(activityFeed);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+}
+
+function displayCo2DivertByUsername(tableData) {
+    let dailyMileage = dailyMileage;
+    let totalMileage = 0;
+    let greenCo2 = 0;
+    let SedanCo2 = 0;
+    let suvCo2 = 0;
+    let buildTable = "";
+
+    let greenCo2Divert = function (greenValue, dailyMileage) {
+        let greenValue = 0.000179;
+        return greenValue * dailyMileage;
+    }
+    console.log(greenCo2Divert);
+
+    let sedanCo2Divert = function (sedanValue, dailyMileage) {
+        let sedanValue = 0.000352;
+        return sedanValue * dailyMileage;
+    }
+    console.log(sedanCo2Divert);
+    let suvCo2Divert = function (suvValue, dailyMileage) {
+        let suvValue = 0.000499;
+        return suvValue * dailyMileage;
+    }
+    console.log(suvCo2Divert);
+
+    $.each(tableData, function (myTableKey, myTableValue) {
+
+        buildTable += '<tr>';
+        buildTable += '<td> ' + myTableKey.currentDate + ' </td>';
+        buildTable += '<td>' + myTableKey.dailyMileage + '</td>';
+        buildTable += '<td>' + greenCo2 + myTableKey.greenCo2Divert + '</td>';
+        buildTable += '<td>' + SedanCo2 + myTableKey.sedanCo2Divert + '</td>';
+        buildTable += '<td>' + suvCo2 + myTableKey.suvCo2Divert + '</td>';
+        buildTable += '</tr>';
+
+        totalMileage = totalMileage + parseInt(myTableValue.dailyMileage);
+
+    });
+    $('#table-total-miles').text(totalMileage);
+    $('#table-data').html(buildTable);
+
+};
+
+}
+
 
 
 
