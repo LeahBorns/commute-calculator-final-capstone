@@ -206,7 +206,7 @@ h1#purpose-header{
 }
 
 div#site-description {
-    width: 45%;
+    width: 50%;
     margin: 0 auto 50px auto;
     display: inline-block;
 
@@ -215,7 +215,7 @@ div#site-description {
 p#about-one {
     margin: 0 auto;
     max-width: 600px;
-    font-size: 1.4em;
+    font-size: 1.2em;
     text-align: left;
     padding-left: 50px;
     line-height: 1.4em;
@@ -235,7 +235,7 @@ img#infographic {
 div#how-it-works{
     width: 25%;
     display: inline-block;
-    font-size: 1.4em;
+    font-size: 1.2em;
     text-align: left;
     margin: 100px auto;
 }
@@ -264,16 +264,20 @@ section#sign-up {
 }
 
 label#label-username, #label-password, #label-repassword {
+    display: block;
     font-size: 1.2em;
 }
 
 input#signup-username, #signup-password, #confirm-password {
-    width: 30%;
+    width: 40%;
     padding-left: 10px;
     border: none;
     border-radius: 10px;
     font-family: 'Roboto', serif;
     font-size: 1em;
+    display: block;
+    margin: auto;
+    line-height: 2em;
 }
 
 button#js-signup-button {
@@ -535,12 +539,22 @@ table tr:hover {
     }
 
     /*Nav*/
+
+    div#nav-logo {
+        width: 41%;
+    }
+
     a#main-logo {
         font-size: 1em;
     }
 
     div#nav-links {
+        width: 35%;
         font-size: 0.8em;
+    }
+
+    button#js-signin-link, #js-signout-link {
+        padding: 7px;
     }
 
     /*sign-in Section*/
@@ -556,6 +570,7 @@ table tr:hover {
     button#js-signin-button {
         width: 70px;
         font-size: 0.9em;
+        padding: 7px;
     }
 
     /*Header Section*/
@@ -569,13 +584,27 @@ table tr:hover {
         font-size: 1.2em;
     }
 
+    div#site-description {
+        width: 55%;
+    }
+
     p#about-one {
         font-size: 1em;
         line-height: 1.4em;
     }
 
-    div#how-it-works{
+    div#site-infographic {
+        width: 80%;
+        margin: auto;
+    }
+
+    div#how-it-works {
         font-size: 0.9em;
+    }
+
+    div#submit-screen {
+        width: 65%;
+        margin-top: 100px;
     }
 
 /*sign-up section*/
@@ -676,6 +705,7 @@ table tr:hover {
         display: block;
         margin-bottom: 5px;
         text-align: center;
+        margin: auto;
     }
 
     div#site-description {
@@ -711,13 +741,10 @@ table tr:hover {
     /*signup section*/
     label#label-username, #label-password, #label-repassword {
         font-size: 0.9em;
-        display: block;
     }
 
     input#signup-username, #signup-password, #confirm-password {
         font-size: 0.8em;
-        display: block;
-        margin: auto;
         width: 70%;
     }
 
