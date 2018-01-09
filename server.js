@@ -69,11 +69,11 @@ function closeServer() {
 //POST -> Creating a new user (Registration)
 app.post('/signup', (req, res) => {
     let username = req.body.username;
-    //    console.log(username);
+//        console.log(username);
     username = username.trim();
 
     let password = req.body.password;
-    //    console.log(password);
+//        console.log(password);
     password = password.trim();
 
     bcrypt.genSalt(10, (err, salt) => {

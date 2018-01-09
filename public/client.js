@@ -93,7 +93,7 @@ $('#js-signin-button').on('click', function (event) {
             contentType: 'application/json'
         })
             .done(function (result) {
-            // console.log(result);
+             console.log(result);
             loggedinUserName = result.username;
             loggedinPassword = result.password;
 
@@ -118,7 +118,7 @@ $('#js-signin-button').on('click', function (event) {
 //and brought back to sign in page to sign in
 
 $('#js-signup-button').on('click', function (event) {
-    event.preventDefault();
+//    event.preventDefault();
 
     const form = document.body.querySelector('#signup-form');
 
@@ -151,7 +151,6 @@ $('#js-signup-button').on('click', function (event) {
         })
             .done(function (result) {
             event.preventDefault();
-            //                    alert('Thanks for signing up! You may now sign in with your username and password.');
             displayError('Thanks for signing up! You may now sign in with your username and password.');
             showSignInSection();
         })
