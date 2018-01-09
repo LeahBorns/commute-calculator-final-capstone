@@ -722,41 +722,56 @@ table tr:hover {
     }
 
     button#js-signup-button {
-        width: 80px;
         font-size: 0.8em;
     }
 
     /*User overall numbers section*/
 
-    section#miles-total div div.card-name {
-        font-size: 1.2em;
-        line-height: 1em;
-        text-align: center;
+    section#miles-total div {
+        margin: 5px auto;
+        width: 80%;
+        display: block;
+
     }
 
-    h3#green-car {
-        margin-bottom: 1rem;
+    section#miles-total div div.card-name {
+        font-size: 1.2em;
     }
 
     /*convert form section*/
     form label {
         font-size: 1em;
         line-height: 2.0em;
+        display: block;
+    }
+
+    input#date, #miles{
+        width: 100%;
+        display: block;
+        margin: auto;
+        padding-left: 10px;
+        line-height: 2em;
     }
 
     button#convert-button {
-        width: 80px;
-        font-size: 0.9em;
+        width: 70px;
+        padding: 7px;
+        font-size: 0.8em;
     }
 
     /*table section*/
+
+    table {
+        margin: auto;
+        width: 90%;
+    }
 
     table th {
         font-size: 1em;
     }
 
     table tr {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
 }
