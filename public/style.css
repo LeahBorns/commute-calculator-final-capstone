@@ -64,6 +64,37 @@ nav {
     color: white;
 }
 
+nav .demoMessage {
+    position: fixed;
+    top: 0px;
+    left: 35%;
+    background-color: #ffce00;
+    color: #2c3531;
+    padding: 10px 5%;
+    width: 30%;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+nav .demoMessage span,
+nav .demoMessage a {
+    color: #2c3531;
+
+}
+
+nav .demoMessage a {
+    cursor: pointer;
+    color: #0375B4;
+}
+
+nav .demoMessage #hideBtn {
+    padding: 2px 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 div#nav-logo {
     width: 40%;
     text-align: right;
@@ -645,6 +676,37 @@ table tr:hover {
 
     nav {
         position: static;
+    }
+
+    nav .demoMessage {
+        position: fixed;
+        top: 0px;
+        left: 40%;
+        background-color: #116466;
+        color: #fff;
+        padding: 10px 5%;
+        width: 30%;
+        text-align: center;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    nav .demoMessage span,
+    nav .demoMessage a {
+        color: #fff;
+
+    }
+
+    nav .demoMessage a {
+        cursor: pointer;
+        color: yellow;
+    }
+
+    nav .demoMessage #hideBtn {
+        padding: 2px 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 
     div#nav-logo {

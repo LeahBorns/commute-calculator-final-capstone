@@ -1,6 +1,6 @@
 const User = require('./models/user');
-const activity = require('./models/activity');
-const activityCategory = require('./models/activityCategory');
+//const activity = require('./models/activity');
+//const activityCategory = require('./models/activityCategory');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -72,16 +72,9 @@ app.post('/signup', (req, res) => {
     //    console.log(username);
     username = username.trim();
 
-    let goals = req.body.goals;
-    //    console.log(goals);
-
     let password = req.body.password;
     //    console.log(password);
     password = password.trim();
-
-    let email = req.body.email;
-    //    console.log(email);
-    email = email.trim();
 
     bcrypt.genSalt(10, (err, salt) => {
         if (err) {
@@ -160,99 +153,6 @@ app.post('/signin/', function (req, res) {
     });
 });
 
-//ACTIVITY ENDPOINTS (CREATE?, FIND, DELETE?)
-//FIND/GET -> accessing all of users activties
-//adding new activity
-app.post('/category/add', function (req, res) {
-    //    console.log(req.params.user);
-    let username = req.body.username;
-    let image = req.body.image;
-    let name = req.body.name;
-    let points = req.body.points;
-
-
-    //    console.log(username, name, points, description, image);
-    console.log("-->", name, "<---");
-
-    activityCategory.create({
-        username: username,
-        activityCategoryImage: image,
-        activityCategoryName: name,
-        activityCategoryPoints: points
-    }, (err, item) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Internal Server Error'
-            });
-        }
-        if (item) {
-            console.log(`activity \`${name}\` added.`);
-            return res.json(item);
-        }
-    });
-});
-app.get('/get-category-by-username/:user', function (req, res) {
-    console.log(req.params.user);
-    activityCategory
-        .find()
-        .sort()
-        .then(function (category) {
-
-        console.log("user categories->", category);
-        let categoryOutput = [];
-        category.map(function (category) {
-            if (category.username == req.params.user) {
-                categoryOutput.push(category);
-            }
-        });
-        res.json({
-            categoryOutput
-        });
-    })
-        .catch(function (err) {
-        console.error(err);
-        res.status(500).json({
-            message: 'Internal server error'
-        });
-    });
-});
-
-app.get('/category/show/:user', function (req, res) {
-    console.log(req.params.user);
-    activityCategory
-        .find()
-        .sort()
-        .then(function (category) {
-
-        console.log("user categories->", category);
-        let categoryOutput = [];
-        category.map(function (category) {
-            if (category.username == req.params.user) {
-                categoryOutput.push(category);
-            }
-        });
-        res.json({
-            categoryOutput
-        });
-    })
-        .catch(function (err) {
-        console.error(err);
-        res.status(500).json({
-            message: 'Internal server error'
-        });
-    });
-});
-
-//DELETE -> an activity by ID
-app.delete('/activity/:id', function (req, res) {
-    activity.findByIdAndRemove(req.params.id).exec().then(function (activity) {
-        return res.status(204).end();
-    }).catch(function (err) {
-        return res.status(500).json({
-            message: 'Internal server error'
-        });
-    });
-});
 
 //////////////////////////Profile Activtiy/////////////////////////////////////////////
 // Completing a new activity
