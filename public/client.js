@@ -43,7 +43,7 @@ function showProfilePage(loggedinUserName) {
     $('#js-signin-link').hide();
     $('#about').hide();
     $('#signup').hide();
-    $('#profileUsername').text(loggedinUserName + " ");
+    //    $('#profileUsername').text(loggedinUserName + " ");
     //    $('#miles-number').text(currentScore + myActivities.activityPoints);
     //    displayProfileActivities(myActivities);
 }
@@ -59,7 +59,8 @@ $("#messageBox").hide();
 
 //User clicks on sign-in button
 $('#js-signin-link').on('click', function () {
-    $('#sign-in-section').toggle();
+    $('#sign-in-section').show();
+    $(window).scrollTop(0);
 });
 
 //USER WITH ACCOUNT SIGNS IN
@@ -104,6 +105,7 @@ $('#js-signin-button').on('click', function (event) {
                 $('#js-signout-link').show();
 
                 showProfilePage(loggedinUserName);
+                getCo2DivertByUsername(loggedinUserName);
             })
             .fail(function (jqXHR, error, errorThrown) {
                 console.log(jqXHR);
@@ -220,29 +222,9 @@ function getCo2DivertByUsername(username) {
             contentType: 'application/json'
         })
         .done(function (result) {
-            console.log(result);
-            //        displayActivitiesFeedByUsername(activityFeed);
-        })
-        .fail(function (jqXHR, error, errorThrown) {
-            console.log(jqXHR);
-            console.log(error);
-            console.log(errorThrown);
-        });
 
-
-//////////////////add data to table///////////////////////
-function inputTableValuesByUsername(username) {
-
-
-    $.ajax({
-            type: 'GET',
-            url: '/tableDataByUsername/' + username,
-            dataType: 'json',
-            contentType: 'application/json'
-        })
-        .done(function (tableData) {
-            console.log(tableData);
-            //        displayActivitiesFeedByUsername(activityFeed);
+            displayCo2DivertByUsernameTable(result.item);
+            //            displayCo2DivertByUsernameSummary(result);
         })
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
@@ -251,50 +233,60 @@ function inputTableValuesByUsername(username) {
         });
 }
 
-function displayCo2DivertByUsername(tableData) {
-    let dailyMileage = dailyMileage;
+
+
+function displayCo2DivertByUsernameTable(tableData) {
+    console.log(tableData);
     let totalMileage = 0;
     let greenCo2 = 0;
     let SedanCo2 = 0;
     let suvCo2 = 0;
-    let buildTable = "";
 
-    let greenCo2Divert = function (greenValue, dailyMileage) {
-        let greenValue = 0.000179;
-        return greenValue * dailyMileage;
-    }
-    console.log(greenCo2Divert);
+    //table head
+    let buildTable = '<tr>';
+    buildTable += '<th>Date</th>';
+    buildTable += '<th>Miles</th>';
+    buildTable += '<th>Efficient CO<sub>2</sub>Divert</th>';
+    buildTable += '<th>Sedan CO<sub>2</sub>Divert</th>';
+    buildTable += '<th>SUV CO<sub>2</sub>Divert</th>';
+    buildTable += '</tr>';
 
-    let sedanCo2Divert = function (sedanValue, dailyMileage) {
-        let sedanValue = 0.000352;
-        return sedanValue * dailyMileage;
-    }
-    console.log(sedanCo2Divert);
-    let suvCo2Divert = function (suvValue, dailyMileage) {
-        let suvValue = 0.000499;
-        return suvValue * dailyMileage;
-    }
-    console.log(suvCo2Divert);
-
+    //table body
     $.each(tableData, function (myTableKey, myTableValue) {
 
         buildTable += '<tr>';
-        buildTable += '<td> ' + myTableKey.currentDate + ' </td>';
-        buildTable += '<td>' + myTableKey.dailyMileage + '</td>';
-        buildTable += '<td>' + greenCo2 + myTableKey.greenCo2Divert + '</td>';
-        buildTable += '<td>' + SedanCo2 + myTableKey.sedanCo2Divert + '</td>';
-        buildTable += '<td>' + suvCo2 + myTableKey.suvCo2Divert + '</td>';
+        buildTable += '<td> ' + myTableValue.currentDate + ' </td>';
+        buildTable += '<td>' + myTableValue.dailyMileage + '</td>';
+        buildTable += '<td>' + (myTableValue.dailyMileage * 0.000179).toFixed(6) + '</td>';
+        buildTable += '<td>' + (myTableValue.dailyMileage * 0.000352).toFixed(6) + '</td>';
+        buildTable += '<td>' + (myTableValue.dailyMileage * 0.000499).toFixed(6) + '</td>';
         buildTable += '</tr>';
 
         totalMileage = totalMileage + parseInt(myTableValue.dailyMileage);
-
+        greenCo2 = greenCo2 + myTableValue.dailyMileage * 0.000179;
+        SedanCo2 = SedanCo2 + myTableValue.dailyMileage * 0.000352;
+        suvCo2 = suvCo2 + myTableValue.dailyMileage * 0.000499;
     });
-    $('#table-total-miles').text(totalMileage);
+
+    //table footer
+    buildTable += '<tr>';
+    buildTable += '<th>Total</th>';
+    buildTable += '<td>' + totalMileage + '</td>';
+    buildTable += '<td>' + greenCo2.toFixed(6) + '</td>';
+    buildTable += '<td>' + SedanCo2.toFixed(6) + '</td>';
+    buildTable += '<td >' + suvCo2.toFixed(6) + '</td>';
+    buildTable += '</tr>';
+
+    //send data to the dom
     $('#table-data').html(buildTable);
+    $('#miles-number').html(totalMileage + " miles");
+    $('#green-car p.carbon').html(greenCo2.toFixed(4) + " Mg CO<sub>2</sub>e/mi");
+    $('#sedan-car p.carbon').html(SedanCo2.toFixed(4) + " Mg CO<sub>2</sub>e/mi");
+    $('#suv-car p.carbon').html(suvCo2.toFixed(4) + " Mg CO<sub>2</sub>e/mi");
 
 };
 
-}
+
 
 
 

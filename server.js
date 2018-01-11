@@ -194,10 +194,12 @@ app.post('/co2Divert/add', (req, res) => {
 });
 
 //Take completed activity and put in feed
-app.get('/co2Divert/show', function (req, res) {
+app.get('/co2Divert/show/:username', function (req, res) {
     //    console.log(req.params.user);
     co2Divert
-        .find()
+        .find({
+            username: req.params.username
+        })
         .sort("currentDate")
         .then(function (item) {
 

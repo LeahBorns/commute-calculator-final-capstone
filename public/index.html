@@ -104,16 +104,16 @@
     <main id="profile-page">
         <section id="miles-total">
             <header>
-                <h2><span id="profileUsername">'Username' </span>Total Mileage</h2>
+                <h2>Total Mileage</h2>
                 <p id="miles-number">500 miles</p>
             </header>
             <div id="green-car">
                 <div class="card-name">
-                    <h3 id="green-car">Green</h3>
+                    <h3>Fuel Efficient</h3>
                     <p class="mpg">50mpg</p>
                 </div>
                 <img src="/images/co2mmute-green.png" alt="green car">
-                <p>50 lbs/co2</p>
+                <p class="carbon">50 lbs/co2</p>
             </div>
             <div id="sedan-car">
                 <div class="card-name">
@@ -121,14 +121,14 @@
                     <p class="mpg">25.5mpg</p>
                 </div>
                 <img src="/images/co2mmute-average.png" alt="average car">
-                <p>100 lbs/co2</p>
+                <p class="carbon">100 lbs/co2</p>
             </div>
             <div id="suv-car">
                 <div class="card-name">
                     <h3>Average SUV</h3>
                     <p class="mpg">18mpg</p>
                 </div> <img src="/images/co2mmute-suv.png" alt="average suv">
-                <p>200 lbs/co2</p>
+                <p class="carbon">200 lbs/co2</p>
             </div>
         </section>
         <section id="miles-input">
@@ -151,70 +151,72 @@
             <header>
                 <h2>Miles to date</h2>
             </header>
-            <table>
-                <tr>
-                    <th>Date</th>
-                    <th>Miles</th>
-                    <th>Green CO<sub>2</sub>Divert</th>
-                    <th>Sedan CO<sub>2</sub>Divert</th>
-                    <th>SUV CO<sub>2</sub>Divert</th>
-                </tr>
-                <tr id="table-data">
-                    <td>12/21/2017</td>
-                    <td>10 miles</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                </tr>
-                <tr>
-                    <td>12/22/2017</td>
-                    <td>5 miles</td>
-                    <td>20 lbs</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                </tr>
-                <tr>
-                    <td>12/23/2017</td>
-                    <td>30 miles</td>
-                    <td>160 lbs</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                </tr>
-                <tr>
-                    <td>12/24/2017</td>
-                    <td>16 miles</td>
-                    <td>80 lbs</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                </tr>
-                <tr>
-                    <td>12/25/2017</td>
-                    <td>3 miles</td>
-                    <td>5 lbs</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                </tr>
-                <tr>
-                    <td>12/26/2017</td>
-                    <td>5 miles</td>
-                    <td>20 lbs</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                </tr>
-                <tr>
-                    <td>12/27/2017</td>
-                    <td>7 miles</td>
-                    <td>30 lbs</td>
-                    <td>40 lbs</td>
-                    <td>40 lbs</td>
-                </tr>
-                <tr>
-                    <th>Total</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td id="table-total-miles">355 lbs</td>
-                </tr>
+            <table id="table-data">
+                <!--
+<tr>
+    <th>Date</th>
+    <th>Miles</th>
+    <th>Green CO<sub>2</sub>Divert</th>
+    <th>Sedan CO<sub>2</sub>Divert</th>
+    <th>SUV CO<sub>2</sub>Divert</th>
+</tr>
+<tr>
+    <td>12/21/2017</td>
+    <td>10 miles</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+</tr>
+<tr>
+    <td>12/22/2017</td>
+    <td>5 miles</td>
+    <td>20 lbs</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+</tr>
+<tr>
+    <td>12/23/2017</td>
+    <td>30 miles</td>
+    <td>160 lbs</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+</tr>
+<tr>
+    <td>12/24/2017</td>
+    <td>16 miles</td>
+    <td>80 lbs</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+</tr>
+<tr>
+    <td>12/25/2017</td>
+    <td>3 miles</td>
+    <td>5 lbs</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+</tr>
+<tr>
+    <td>12/26/2017</td>
+    <td>5 miles</td>
+    <td>20 lbs</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+</tr>
+<tr>
+    <td>12/27/2017</td>
+    <td>7 miles</td>
+    <td>30 lbs</td>
+    <td>40 lbs</td>
+    <td>40 lbs</td>
+</tr>
+<tr>
+    <th>Total</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td id="table-total-miles">355 lbs</td>
+</tr>
+-->
             </table>
         </section>
     </main>

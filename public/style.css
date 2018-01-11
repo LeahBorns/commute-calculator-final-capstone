@@ -249,7 +249,7 @@ header#page-title {
 /*Purpose section*/
 
 section#purpose-statement {
-    padding: 50px 0;
+    padding: 75px 0;
     background-color: #fff;
     color: #000;
     background-image: url("/images/tree-section.png");
@@ -538,7 +538,6 @@ table tr:hover {
         font-size: 2.5em;
     }
 
-    /*purpose section*/
     h2#purpose-header {
         width: 20%;
         font-size: 1.5em;
@@ -628,6 +627,10 @@ table tr:hover {
     button#js-signin-link,
     #js-signout-link {
         padding: 7px;
+    }
+
+    button#js-signout-link {
+        width: 100%;
     }
 
     /*sign-in Section*/
@@ -772,11 +775,24 @@ table tr:hover {
         text-align: center;
     }
 
+    /*
     div#sign-in-buttons {
-        width: 60%;
-        display: block;
+        width: 40%;
         margin: 10px auto;
+        display: block;
+    }
+*/
+    div#sign-in-buttons,
+    #js-signin-link,
+    #js-signout-link {
+        margin: 10px auto;
+        width: 40%;
+        text-align: center;
+        display: block;
+    }
 
+    button#js-signout-link {
+        width: 70%;
     }
 
     /*sign-in Section*/
