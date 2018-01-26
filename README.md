@@ -1,11 +1,11 @@
 # commute-calculator-final-capstone
 Final capstone that will allow bike commuters to calculate the lbs co2 diverted
 
-![Sign-in Page Screenshot](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-screen-shots/sustain-sign-in-page.png)
-![Registration Screenshot](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-screen-shots/sustain-registration-page.png)
-![Activity Categories Page Screenshot](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-screen-shots/sustain-categories-page.png)
-![Profile page (top/bottom) Screenshot](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-screen-shots/sustain-profile-page-top.png)
-![Profile page (top/bottom) Screenshot](https://github.com/LeahBorns/sustain-node-capstone/blob/master/github-images/sustain-screen-shots/sustain-profile-page-bottom.png)
+![Landing page top Screenshot](https://github.com/LeahBorns/commute-calculator-final-capstone-react/blob/master/wire-frame-images/landing-page-top.png)
+![Landing page bottom Screenshot](https://github.com/LeahBorns/commute-calculator-final-capstone-react/blob/master/wire-frame-images/landing-page-bottom.png)
+![Sign-in Page Screenshot](https://github.com/LeahBorns/commute-calculator-final-capstone-react/blob/master/wire-frame-images/sign-in-page.png)
+![User page top Screenshot](https://github.com/LeahBorns/commute-calculator-final-capstone-react/blob/master/wire-frame-images/user-page-top.png)
+![User page bottom Screenshot](https://github.com/LeahBorns/commute-calculator-final-capstone-react/blob/master/wire-frame-images/user-page-bottom.png)
 
 ## Introduction
 Co2mmute calculator is a simple way for bike commuters to keep track of their milage and the positive impact they are having each time they decide to pedal vs drive.
@@ -70,4 +70,4 @@ The app is built with HTML, CSS, JavaScript, jQuery, Node.js and React. All data
 
 This is v1.0 of the app, but future enhancements are expected to include:
 
-* I plan to add a friends page and overall feed page for users to interact with other users. I also want to connect the points to artists merchandise web pages so users can redeem their points for prizes.
+* Enhacements to the sign-in pull down and a bike gif to make it more visually appealing.

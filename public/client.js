@@ -257,32 +257,32 @@ function displayCo2DivertByUsernameTable(tableData) {
         buildTable += '<tr>';
         buildTable += '<td> ' + myTableValue.currentDate + ' </td>';
         buildTable += '<td>' + myTableValue.dailyMileage + '</td>';
-        buildTable += '<td>' + (myTableValue.dailyMileage * 255.0).toFixed(1) + '</td>';
-        buildTable += '<td>' + (myTableValue.dailyMileage * 500.0).toFixed(1) + '</td>';
-        buildTable += '<td>' + (myTableValue.dailyMileage * 708.3).toFixed(1) + '</td>';
+        buildTable += '<td>' + (myTableValue.dailyMileage * 255).toLocaleString() + '</td>';
+        buildTable += '<td>' + (myTableValue.dailyMileage * 500).toLocaleString() + '</td>';
+        buildTable += '<td>' + (myTableValue.dailyMileage * 708).toLocaleString() + '</td>';
         buildTable += '</tr>';
 
         totalMileage = totalMileage + parseInt(myTableValue.dailyMileage);
-        greenCo2 = greenCo2 + myTableValue.dailyMileage * 255.0;
-        SedanCo2 = SedanCo2 + myTableValue.dailyMileage * 500.0;
-        suvCo2 = suvCo2 + myTableValue.dailyMileage * 708.3;
+        greenCo2 = greenCo2 + myTableValue.dailyMileage * 255;
+        SedanCo2 = SedanCo2 + myTableValue.dailyMileage * 500;
+        suvCo2 = suvCo2 + myTableValue.dailyMileage * 708;
     });
 
     //table footer
     buildTable += '<tr>';
     buildTable += '<th>Total</th>';
     buildTable += '<td>' + totalMileage + '</td>';
-    buildTable += '<td>' + greenCo2.toFixed(1) + '</td>';
-    buildTable += '<td>' + SedanCo2.toFixed(1) + '</td>';
-    buildTable += '<td >' + suvCo2.toFixed(1) + '</td>';
+    buildTable += '<td>' + greenCo2.toLocaleString() + '</td>';
+    buildTable += '<td>' + SedanCo2.toLocaleString() + '</td>';
+    buildTable += '<td >' + suvCo2.toLocaleString() + '</td>';
     buildTable += '</tr>';
 
     //send data to the dom
     $('#table-data').html(buildTable);
     $('#miles-number').html(totalMileage + " miles");
-    $('#green-car p.carbon').html(greenCo2.toFixed(1) + " lbs CO<sub>2</sub>");
-    $('#sedan-car p.carbon').html(SedanCo2.toFixed(1) + " lbs CO<sub>2</sub>");
-    $('#suv-car p.carbon').html(suvCo2.toFixed(1) + " lbs CO<sub>2</sub>");
+    $('#green-car p.carbon').html(greenCo2.toLocaleString() + " lbs CO<sub>2</sub>");
+    $('#sedan-car p.carbon').html(SedanCo2.toLocaleString() + " lbs CO<sub>2</sub>");
+    $('#suv-car p.carbon').html(suvCo2.toLocaleString() + " lbs CO<sub>2</sub>");
 
 };
 
